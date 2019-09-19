@@ -1,3 +1,4 @@
+/*
 package com.java.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -76,3 +77,4 @@ public class BaseModel implements Serializable {
 
 
 }
+*/

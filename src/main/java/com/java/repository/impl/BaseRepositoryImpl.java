@@ -1,8 +1,9 @@
-package com.java.repository.impl;
+/*package com.java.repository.impl;
 
 import com.google.common.collect.Lists;
+import com.google.inject.Inject;
 import com.java.annotations.CollectionName;
-import com.java.api.BaseModel;
+*//*import com.java.api.BaseModel;*//*
 import com.java.db.MongoDb;
 import com.java.repository.BaseRepository;
 import org.bson.types.ObjectId;
@@ -10,13 +11,17 @@ import org.jongo.MongoCollection;
 
 import java.util.List;
 
-public class BaseRepositoryImpl<T extends BaseModel> implements BaseRepository<T> {
-   /*final */
+public class BaseRepositoryImpl implements BaseRepository<T> {
+   *//*final *//*
+  @Inject
    MongoDb mongoManager;
-   /*protected final*/
+   *//*protected final*//*
+  @Inject
    MongoCollection collection;
-   /*protected final*/
-   Class<T> entityClass;
+   *//*protected final*//*
+  *//*@Inject
+   Class<T> entityClass;*//*
+   @Inject
    protected CollectionName collectionName;
 
 
@@ -44,7 +49,7 @@ public class BaseRepositoryImpl<T extends BaseModel> implements BaseRepository<T
         Iterable items = collection .find().as(entityClass);
         return Lists.newArrayList(items);
 
-    }
+    }*/
 
 /*@Override
     public T getById(String id) {
@@ -73,4 +78,6 @@ public class BaseRepositoryImpl<T extends BaseModel> implements BaseRepository<T
         return model;
     }*/
 
+/*
 }
+*/

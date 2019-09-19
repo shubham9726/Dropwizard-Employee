@@ -1,9 +1,7 @@
 package com.java;
 
 import com.google.inject.AbstractModule;
-import com.java.repository.BaseRepository;
 import com.java.repository.EmployeeRepository;
-import com.java.repository.impl.BaseRepositoryImpl;
 import com.java.repository.impl.EmployeeRepositoryImpl;
 import com.java.service.EmployeeService;
 import com.java.service.impl.EmployeeServiceImpl;
@@ -16,6 +14,6 @@ public class ApplicationConnector extends AbstractModule {
   protected void configure() {
     bind(EmployeeService.class).to(EmployeeServiceImpl.class);
     bind(EmployeeRepository.class).to(EmployeeRepositoryImpl.class);
-    bind(BaseRepository.class).to(BaseRepositoryImpl.class);
+
   }
 }

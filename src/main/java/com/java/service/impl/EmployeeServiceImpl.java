@@ -10,6 +10,7 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
   EmployeeRepository employeeRepository;
+
   @Inject
   public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
     this.employeeRepository =  employeeRepository;
@@ -26,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   }*/
 
   public void insertOne(Employee employee) {
+    /*employeeRepository.save(employee);*/
     employeeRepository.save(employee);
     /*final Document saveEmployee =new Document("name", employee.getName())
       .append("address", employee.getAddress())

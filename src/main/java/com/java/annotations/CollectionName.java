@@ -13,7 +13,6 @@ public @interface CollectionName {
     public String[] indexes() default {};
 
     public String[] uniqueIndexes() default {};
-
     boolean premSyncDown() default  true;
     boolean premSyncUp() default true;
 }

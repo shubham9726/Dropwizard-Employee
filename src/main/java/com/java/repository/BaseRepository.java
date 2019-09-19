@@ -1,3 +1,4 @@
+/*
 package com.java.repository;
 
 import com.java.api.BaseModel;
@@ -8,7 +9,10 @@ public interface BaseRepository<T extends BaseModel> extends GenericRepository<T
 
     T save(T model);
     List<T> getAll();
-    /*T getById(String Id);
+    */
+/*T getById(String Id);
     void deleteById(String Id);
-    T updateById(String Id, T model);*/
+    T updateById(String Id, T model);*//*
+
 }
+*/

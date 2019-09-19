@@ -1,12 +1,14 @@
 package com.java.configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.dropwizard.lifecycle.Managed;
+import io.dropwizard.setup.Environment;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
-public class AppConfiguration  {
+public class MessageQueueFactory {
   @JsonProperty
   @NotEmpty
   public String mongoHost;
@@ -56,53 +58,18 @@ public class AppConfiguration  {
     this.collectionName = collectionName;
   }
 
-  /* public AppConfigurationClient build(Environment environment) {
-     AppConfigurationClient client = new AppConfigurationClient(getCollectionName(),getMongoDB(),getMongoHost(),getMongoPort());
-      environment.lifecycle().manage(new Managed() {
+  public MessageQueueClient build(Environment environment) {
+    MessageQueueClient client = new MessageQueueClient(getMongoHost(), getMongoPort(), getCollectionName(),getMongoDB());
+    environment.lifecycle().manage(new Managed() {
       @Override
       public void start() {
       }
 
       @Override
       public void stop() {
+        client.close();
       }
     });
     return client;
   }
-
-  } */
-
-
-    /*public MongoConfiguration getMongoConfiguration() {
-        return mongoConfiguration;
-    }
-
-    public void setMongoConfiguration(MongoConfiguration mongoConfiguration) {
-        this.mongoConfiguration = mongoConfiguration;
-    }
-
-    @Valid
-    @JsonProperty("mongoserver")
-    public MongoConfiguration mongoConfiguration;
-*/
-    /*@JsonProperty
-    public String getTemplate() {
-        return template;
-    }
-
-    @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
-    }
-
-    @JsonProperty
-    public String getDefaultName() {
-        return defaultName;
-    }
-
-    @JsonProperty
-    public void setDefaultName(String name) {
-        this.defaultName = name;
-    }*/
-
 }
